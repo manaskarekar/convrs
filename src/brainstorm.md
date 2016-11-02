@@ -18,7 +18,8 @@
 
 - Vim scheme > Read > Use vim->IR profile > Convert to IR > Use IR->jedit profile > Write to file
 - Structure of X -> Y profile and Y -> X profiles. Can you use a single file? One end will always be IR.
-- Choosing an IR : JSON, jedit-scheme modified?,
+- Choosing an IR : JSON, yaml, toml, custom?
+- Parse format1 into an IntermediateRepr object -> write to json ir file -> then read the file and spit it out as
 
 ### Misc notes:
 
