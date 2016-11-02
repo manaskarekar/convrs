@@ -1,0 +1,6 @@
+[package]
+name = "convrs"
+version = "0.1.0"
+authors = ["Manas Karekar <powerslave12r@gmail.com>"]
+
+[dependencies]

@@ -1,0 +1,13 @@
+{
+	"keyword1" : { "color" : "#006699", "style" : "bold" },
+	"keyword2" : { "color" : "#009966", "style" : "bold" },
+	"keyword3" : { "color" : "#0099ff", "style" : "bold" },
+	"keyword4" : { "color" : "#66ccff", "style" : "bold" },
+
+	"currentLineColor" : { "color" : "#ff0033"},
+
+	"foldLine0" : { "color" : "#000000", "bgcolor" : "#dafeda", "style" : "bold" },
+	"foldLine1" : { "color" : "#000000", "bgcolor" : "#fff0cc", "style" : "bold" },
+	"foldLine2" : { "color" : "#000000", "bgcolor" : "#e7e7ff", "style" : "bold" },
+	"foldLine3" : { "color" : "#000000", "bgcolor" : "#ffe0f0", "style" : "bold" }
+}
