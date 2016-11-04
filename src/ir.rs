@@ -26,7 +26,7 @@ pub fn encode_to_ir(input_file: String) {}
 
 pub fn write_ir_to_json(ir_file: String) {}
 
-pub fn read_json_to_ir(ir_file: String) {
+pub fn read_json_to_ir(ir_file: String) -> self::rustc_serialize::json::Json {
 	println!("{}", &ir_file);
 
 	let mut f = File::open(&ir_file).expect("Failed to read .ir file.");
@@ -36,6 +36,6 @@ pub fn read_json_to_ir(ir_file: String) {
 
 	let json_data = Json::from_str(&data).unwrap();
 	println!("data: {}", json_data);
-	//decode(json_data)
 
+	json_data
 }
