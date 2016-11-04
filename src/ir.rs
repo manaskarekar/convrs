@@ -1,6 +1,5 @@
 extern crate rustc_serialize;
 
-
 use self::rustc_serialize::json::Json;
 use std::fs::File;
 use std::io::Read;
@@ -21,16 +20,18 @@ pub struct IntermediateRepr {
 	foldLine3 : String,
 }
 
-fn decode_from_ir(ir_file: String) {
-	let mut f = File::open("template_ir.json").expect("Failed to read .ir file.");
+pub fn decode_from_ir(ir_file: String) {
+	println!("{}", &ir_file);
+
+	let mut f = File::open(&ir_file).expect("Failed to read .ir file.");
 	let mut data = String::new();
 
 	f.read_to_string(&mut data).unwrap();
 
 	let json_data = Json::from_str(&data).unwrap();
-	//println!()
+	println!("data: {}", json_data);
 	//decode(json_data)
 
 }
 
-fn encode_to_ir(input_file: String) {}
+pub fn encode_to_ir(input_file: String) {}
