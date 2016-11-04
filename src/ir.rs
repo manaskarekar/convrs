@@ -20,7 +20,13 @@ pub struct IntermediateRepr {
 	foldLine3 : String,
 }
 
-pub fn decode_from_ir(ir_file: String) {
+pub fn decode_from_ir(ir_file: String) {}
+
+pub fn encode_to_ir(input_file: String) {}
+
+pub fn write_ir_to_json(ir_file: String) {}
+
+pub fn read_json_to_ir(ir_file: String) {
 	println!("{}", &ir_file);
 
 	let mut f = File::open(&ir_file).expect("Failed to read .ir file.");
@@ -33,5 +39,3 @@ pub fn decode_from_ir(ir_file: String) {
 	//decode(json_data)
 
 }
-
-pub fn encode_to_ir(input_file: String) {}
