@@ -41,7 +41,7 @@ pub fn json_to_ir(json_data: &String) -> IntermediateRepr {
 
 pub fn write_json(ir_file: String) {}
 
-pub fn read_json2(ir_file: String) -> IntermediateRepr {
+pub fn read_json2(ir_file: String) -> String {
 	println!("json file: {}", &ir_file);
 
 	let mut f = File::open(&ir_file).expect("Failed to read .ir file.");
@@ -49,10 +49,7 @@ pub fn read_json2(ir_file: String) -> IntermediateRepr {
 
 	f.read_to_string(&mut data).unwrap();
 
-	let decoded: IntermediateRepr = json::decode(&data).unwrap();
-	println!("\ndata: {:#?}", &decoded);
-
-	return decoded;
+	data
 }
 
 pub fn read_json(ir_file: String) -> json::Json {

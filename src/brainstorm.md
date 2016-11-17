@@ -29,3 +29,14 @@
 ### TODO:
 
 - Plugging in a simple json structure for now, hope to change it to a simple non json file.
+
+- json_to_ir
+- ir_to_json
+- readers
+	- vim_reader
+	- jedit_reader
+- writers
+	- vim writer
+	- jedit writer
+- class IR
+- class IRAttribute
