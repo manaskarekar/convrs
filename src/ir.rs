@@ -9,23 +9,22 @@ pub struct IRAttribute {
 	color: String,
 	bgcolor: String,
 	style: String, //example: "biu" -> bold and italic and underscored if supported.
-
 }
 
 
 #[derive(RustcDecodable, RustcEncodable, Debug)]
 pub struct IntermediateRepr {
-	keyword1 : IRAttribute,
-	keyword2 : IRAttribute,
-	keyword3 : IRAttribute,
-	keyword4 : IRAttribute,
+	keyword1 : String, //TODO: Keeping it simple for now, change these to IRAttribute.
+	keyword2 : String,
+	keyword3 : String,
+	keyword4 : String,
 
-	currentLineColor : IRAttribute,
+	currentLineColor : String,
 
-	foldLine0 : IRAttribute,
-	foldLine1 : IRAttribute,
-	foldLine2 : IRAttribute,
-	foldLine3 : IRAttribute,
+	foldLine0 : String,
+	foldLine1 : String,
+	foldLine2 : String,
+	foldLine3 : String,
 }
 
 pub fn ir_to_json(ir: String) {
