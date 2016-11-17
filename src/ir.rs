@@ -1,41 +1,70 @@
-extern crate rustc_serialize;
-
-use self::rustc_serialize::json::Json;
+use rustc_serialize::{json};
 use std::fs::File;
 use std::io::Read;
 use std::path::Path;
 use std::error::Error;
 
-pub struct IntermediateRepr {
-	keyword1 : String,
-	keyword2 : String,
-	keyword3 : String,
-	keyword4 : String,
+#[derive(RustcDecodable, RustcEncodable, Debug)]
+pub struct IRAttribute {
+	color: String,
+	bgcolor: String,
+	style: String, //example: "biu" -> bold and italic and underscored if supported.
 
-	currentLineColor : String,
-
-	foldLine0 : String,
-	foldLine1 : String,
-	foldLine2 : String,
-	foldLine3 : String,
 }
 
-pub fn decode_from_ir(ir_file: String) {}
 
-pub fn encode_to_ir(input_file: String) {}
+#[derive(RustcDecodable, RustcEncodable, Debug)]
+pub struct IntermediateRepr {
+	keyword1 : IRAttribute,
+	keyword2 : IRAttribute,
+	keyword3 : IRAttribute,
+	keyword4 : IRAttribute,
 
-pub fn write_ir_to_json(ir_file: String) {}
+	currentLineColor : IRAttribute,
 
-pub fn read_json_to_ir(ir_file: String) -> self::rustc_serialize::json::Json {
-	println!("{}", &ir_file);
+	foldLine0 : IRAttribute,
+	foldLine1 : IRAttribute,
+	foldLine2 : IRAttribute,
+	foldLine3 : IRAttribute,
+}
+
+pub fn ir_to_json(ir: String) {
+
+}
+
+pub fn json_to_ir(json_data: &String) -> IntermediateRepr {
+	let decoded: IntermediateRepr = json::decode(json_data).unwrap();
+	println!("\njson_data: {:#?}", &json_data);
+
+	return decoded;
+}
+
+pub fn write_json(ir_file: String) {}
+
+pub fn read_json2(ir_file: String) -> IntermediateRepr {
+	println!("json file: {}", &ir_file);
 
 	let mut f = File::open(&ir_file).expect("Failed to read .ir file.");
 	let mut data = String::new();
 
 	f.read_to_string(&mut data).unwrap();
 
-	let json_data = Json::from_str(&data).unwrap();
-	println!("data: {}", json_data);
+	let decoded: IntermediateRepr = json::decode(&data).unwrap();
+	println!("\ndata: {:#?}", &decoded);
+
+	return decoded;
+}
+
+pub fn read_json(ir_file: String) -> json::Json {
+	println!("json file: {}", &ir_file);
+
+	let mut f = File::open(&ir_file).expect("Failed to read .ir file.");
+	let mut data = String::new();
+
+	f.read_to_string(&mut data).unwrap();
+
+	let json_data = json::Json::from_str(&data).unwrap();
+	//println!("\ndata: {:#?}", json_data);
 
 	json_data
 }
