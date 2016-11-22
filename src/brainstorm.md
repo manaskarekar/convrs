@@ -21,14 +21,17 @@
 - Choosing an IR : JSON, yaml, toml, custom?
 - Parse format1 into an IntermediateRepr object -> write to json ir file -> then read the file and spit it out as
 
-### Misc notes:
+### Thoughts:
 
 - Perhaps, some sort of caching in any of the steps above?
 - Can you learn the scheme instead of needing a X -> Y profile?
+- You need to account for the defaults from various editors, such as defaults in vimscheme.
 
 ### TODO:
 
 - Plugging in a simple json structure for now, hope to change it to a simple non json file.
+- For v 0.0.1, pick out the stuff from a vim scheme that you need for jedit scheme.
+
 
 - json_to_ir
 - ir_to_json
@@ -40,3 +43,9 @@
 	- jedit writer
 - class IR
 - class IRAttribute
+
+
+### Wishlist:
+
+- Add inspection of file name extension to figure out source format type. For now ask explicitly.
+- Add a list of formats that can be passed to the commandline as parameters.

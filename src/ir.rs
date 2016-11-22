@@ -45,10 +45,10 @@ pub fn write_json(ir_file: String) {
 	//json file
 }
 
-pub fn read_json(ir_file: String) -> String {
-	println!("json file: {}", &ir_file);
+pub fn read_file(filename: String) -> String {
+	println!("filename: {}", &filename);
 
-	let mut f = File::open(&ir_file).expect("Failed to read .ir file.");
+	let mut f = File::open(&filename).expect("Failed to read file.");
 	let mut data = String::new();
 
 	f.read_to_string(&mut data).unwrap();

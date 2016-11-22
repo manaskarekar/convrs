@@ -2,15 +2,37 @@ extern crate rustc_serialize;
 
 mod profiles;
 mod ir;
+mod convert;
 
-use ir::*;
+
+use std::env;
 
 fn main() {
 	println!("A tool to convert color schemes between editors.");
+	let args: Vec<String> = env::args().collect();
+	if (args.len() != 4) {
+		println!("Invalid number of args: Use form: convrs <filename> source_format destination_format.")
+	} else {
+		convert::convert(&args[1], &args[2], &args[3]);
+	}
 
-	let json_data = ir::read_json("src/test.json".to_string());
-	//println!("{:#?}", &json_data);
-	let ir_obj = ir::json_to_ir(&json_data);
-	let json_string = ir_to_json(&ir_obj);
-	//let x:
+	//profiles::vim::tokenize("src/test.json".to_string());
+
+
 }
+
+/*
+use ir::*;
+
+{
+	// Misc code snippets until I grok Rust syntax
+	for x in env::args(){
+		println!("{}", x);
+	}
+
+	let data = ir::read_file("src/test.json".to_string());
+	//println!("{:#?}", &data);
+	let ir_obj = ir::json_to_ir(&data);
+	let json_string = ir_to_json(&ir_obj);
+}
+*/
