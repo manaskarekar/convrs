@@ -1,2 +1,2 @@
-//read_jeditscheme() {}
-//write_jeditscheme() {}
+//read_scheme() {}
+//write_scheme() {}

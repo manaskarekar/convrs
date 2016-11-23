@@ -1,14 +1,8 @@
-use ir::{read_file, IntermediateRepr};
+use ir::{read_file, tokenize, IntermediateRepr};
 
-pub fn tokenize(infile: String) {
-	let raw_data = read_file(infile);
-	println!("raw_data:{:#?}", &raw_data);
+pub fn read_scheme(infile: &String) -> IntermediateRepr {
+	println!("Do something.");
+	IntermediateRepr{}
 }
 
-
-fn read_vimscheme() {} /*-> IntermediateRepr {
-
-
-}
-
-//write_vimscheme() {}*/
+//write_scheme() {}

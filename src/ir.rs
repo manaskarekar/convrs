@@ -14,17 +14,17 @@ pub struct IRAttribute {
 
 #[derive(RustcDecodable, RustcEncodable, Debug)]
 pub struct IntermediateRepr {
-	keyword1 : String, //TODO: Keeping it simple for now, change these to IRAttribute.
-	keyword2 : String,
-	keyword3 : String,
-	keyword4 : String,
-
-	currentLineColor : String,
-
-	foldLine0 : String,
-	foldLine1 : String,
-	foldLine2 : String,
-	foldLine3 : String,
+	//keyword1 : String, //TODO: Keeping it simple for now, change these to IRAttribute.
+	//keyword2 : String,
+	//keyword3 : String,
+	//keyword4 : String,
+    //
+	//currentLineColor : String,
+    //
+	//foldLine0 : String,
+	//foldLine1 : String,
+	//foldLine2 : String,
+	//foldLine3 : String,
 }
 
 pub fn ir_to_json(ir: &IntermediateRepr) -> String {
@@ -45,7 +45,12 @@ pub fn write_json(ir_file: String) {
 	//json file
 }
 
-pub fn read_file(filename: String) -> String {
+pub fn tokenize(infile: &String) {
+	let raw_data = read_file(infile);
+	println!("raw_data:{:#?}", &raw_data);
+}
+
+pub fn read_file(filename: &String) -> String {
 	println!("filename: {}", &filename);
 
 	let mut f = File::open(&filename).expect("Failed to read file.");
