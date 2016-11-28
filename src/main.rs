@@ -1,3 +1,5 @@
+//Convrs: A tool to convert color schemes between editors.
+
 extern crate rustc_serialize;
 
 mod profiles;
@@ -7,10 +9,9 @@ mod convert;
 use std::env;
 
 fn main() {
-	println!("A tool to convert color schemes between editors.");
 	let args: Vec<String> = env::args().collect();
 	if (args.len() != 4) {
-		println!("Invalid number of args: Use form: convrs <filename> source_format destination_format.")
+		println!("Invalid number of args: Use form: convrs <filename> <source_format> <destination_format>.")
 	} else {
 		convert::convert(&args[1], &args[2], &args[3]);
 	}

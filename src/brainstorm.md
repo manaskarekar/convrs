@@ -35,12 +35,9 @@
 
 - json_to_ir
 - ir_to_json
-- readers
-	- vim_reader
-	- jedit_reader
-- writers
-	- vim writer
-	- jedit writer
+- profiles
+	- vim_reader and writer
+	- jedit_reader and writer
 - class IR
 - class IRAttribute
 
@@ -49,3 +46,4 @@
 
 - Add inspection of file name extension to figure out source format type. For now ask explicitly.
 - Add a list of formats that can be passed to the commandline as parameters.
+- Add reading schemes from urls, github, paletton and others.

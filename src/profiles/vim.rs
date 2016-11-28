@@ -1,8 +1,8 @@
 use ir::{read_file, tokenize, IntermediateRepr};
 
 pub fn read_scheme(infile: &String) -> IntermediateRepr {
-	println!("Do something.");
+	println!("Reading vim scheme..");
 	IntermediateRepr{}
 }
 
-//write_scheme() {}
+pub fn write_scheme() {}

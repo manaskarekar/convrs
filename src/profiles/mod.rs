@@ -3,3 +3,4 @@
 
 pub mod vim;
 pub mod jedit;
+pub mod paletton_txt;
