@@ -16,8 +16,6 @@ fn main() {
 		convert::convert(&args[1], &args[2], &args[3]);
 	}
 	//profiles::vim::tokenize("src/test.json".to_string());
-
-
 }
 
 /*

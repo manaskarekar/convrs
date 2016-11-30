@@ -1,6 +1,6 @@
 use rustc_serialize::{json};
 use std::fs::File;
-use std::io::Read;
+use std::io::{Read, Write};
 use std::path::Path;
 use std::error::Error;
 
@@ -12,12 +12,12 @@ pub struct IRAttribute {
 }
 
 
-#[derive(RustcDecodable, RustcEncodable, Debug)]
+#[derive(RustcDecodable, RustcEncodable, Debug, Default)]
 pub struct IntermediateRepr {
-	//keyword1 : String, //TODO: Keeping it simple for now, change these to IRAttribute.
-	//keyword2 : String,
-	//keyword3 : String,
-	//keyword4 : String,
+	//text_keyword1 : String, //TODO: Keeping it simple for now, change these to IRAttribute.
+	//text_keyword2 : String,
+	//text_keyword3 : String,
+	//text_keyword4 : String,
     //
 	//currentLineColor : String,
     //
@@ -25,6 +25,13 @@ pub struct IntermediateRepr {
 	//foldLine1 : String,
 	//foldLine2 : String,
 	//foldLine3 : String,
+
+	pub name : String,
+	pub view_fgcolor : String,
+	//view_bgcolor : String,
+	//view_linehighlightcolor : String,
+	//view_caretcolor : String,
+
 }
 
 pub fn ir_to_json(ir: &IntermediateRepr) -> String {
@@ -51,7 +58,7 @@ pub fn tokenize(infile: &String) {
 }
 
 pub fn read_file(filename: &String) -> String {
-	println!("filename: {}", &filename);
+	println!("reading file: {}", &filename);
 
 	let mut f = File::open(&filename).expect("Failed to read file.");
 	let mut data = String::new();
@@ -60,4 +67,13 @@ pub fn read_file(filename: &String) -> String {
 	//let json_data = json::Json::from_str(&data).unwrap(); //returns json::Json object
 
 	data
+}
+
+pub fn write_file(filename: &String, data: &String) {
+	println!("writing file: {}", &filename);
+
+	let mut f = File::create("foo.txt").expect("Failed to create output file.");
+	//let mut f = try!(File::create("foo.txt"));
+
+	f.write_all(data.as_bytes()).expect("Failed to write to output file.")
 }
