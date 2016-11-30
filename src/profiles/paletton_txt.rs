@@ -13,15 +13,17 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	//	assert line !empty and index <= len
 
 	let mut scheme = IntermediateRepr { //create new from scheme_data
-		name : "temp".to_string(),
+		name : infile.to_string(),
 		view_fgcolor : lines[7].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		view_bgcolor : lines[9].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		currentLineColor : "BB1A75".to_string(),
+		text_keyword1 : lines[8].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		text_keyword2 : lines[8].split(' ').collect::<Vec<&str>>()[6].to_string(), //TODO: Temporarily using keyword1 val
+		text_keyword3 : lines[10].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		text_keyword4 : lines[11].split(' ').collect::<Vec<&str>>()[6].to_string(),	
 	};
 
-	let primary_shade1 = &lines[8].split(' ').collect::<Vec<&str>>()[6];
-	let primary_shade2 = &lines[9].split(' ').collect::<Vec<&str>>()[6];
-	let primary_shade3 = &lines[10].split(' ').collect::<Vec<&str>>()[6];
-	let primary_shade4 = &lines[11].split(' ').collect::<Vec<&str>>()[6];
-
+	/*
 	let secondary1_shade0 = &lines[15].split(' ').collect::<Vec<&str>>()[6];
 	let secondary1_shade1 = &lines[16].split(' ').collect::<Vec<&str>>()[6];
 	let secondary1_shade2 = &lines[17].split(' ').collect::<Vec<&str>>()[6];
@@ -39,6 +41,8 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	let complement_shade2 = &lines[33].split(' ').collect::<Vec<&str>>()[6];
 	let complement_shade3 = &lines[34].split(' ').collect::<Vec<&str>>()[6];
 	let complement_shade4 = &lines[35].split(' ').collect::<Vec<&str>>()[6];
+
+	*/
 
 	println!("paletton scheme: {:#?}", &scheme);
 

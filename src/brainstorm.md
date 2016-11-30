@@ -41,9 +41,11 @@
 - class IR
 - class IRAttribute
 
+- Strings and company are handled atrociously right now. Please fix.
 
 ### Wishlist:
 
 - Add inspection of file name extension to figure out source format type. For now ask explicitly.
 - Add a list of formats that can be passed to the commandline as parameters.
 - Add reading schemes from urls, github, paletton and others.
+- Handle scheme names properlu.

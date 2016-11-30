@@ -14,13 +14,13 @@ pub struct IRAttribute {
 
 #[derive(RustcDecodable, RustcEncodable, Debug, Default)]
 pub struct IntermediateRepr {
-	//text_keyword1 : String, //TODO: Keeping it simple for now, change these to IRAttribute.
-	//text_keyword2 : String,
-	//text_keyword3 : String,
-	//text_keyword4 : String,
-    //
-	//currentLineColor : String,
-    //
+	pub text_keyword1 : String, //TODO: Keeping it simple for now, change these to IRAttribute.
+	pub text_keyword2 : String,
+	pub text_keyword3 : String,
+	pub text_keyword4 : String,
+    
+	pub currentLineColor : String,
+    
 	//foldLine0 : String,
 	//foldLine1 : String,
 	//foldLine2 : String,
@@ -28,7 +28,8 @@ pub struct IntermediateRepr {
 
 	pub name : String,
 	pub view_fgcolor : String,
-	//view_bgcolor : String,
+	pub view_bgcolor : String,
+
 	//view_linehighlightcolor : String,
 	//view_caretcolor : String,
 
@@ -72,7 +73,7 @@ pub fn read_file(filename: &String) -> String {
 pub fn write_file(filename: &String, data: &String) {
 	println!("writing file: {}", &filename);
 
-	let mut f = File::create("foo.txt").expect("Failed to create output file.");
+	let mut f = File::create(filename).expect("Failed to create output file.");
 	//let mut f = try!(File::create("foo.txt"));
 
 	f.write_all(data.as_bytes()).expect("Failed to write to output file.")
