@@ -1,1 +1,23 @@
-use ir::{read_file, write_file, tokenize, IntermediateRepr};\n\npub fn read_scheme(infile: &String) -> IntermediateRepr {\n	println!("Reading jedit scheme..");\n	IntermediateRepr{\n		name : "temp".to_string(),\n		view_fgcolor : "temp".to_string(),\n	}\n}\n\npub fn write_scheme(scheme: &IntermediateRepr) {\n	//TODO: use templating\n	//TODO: handle edge cases\n	//TODO: Rust rawstrings?\n\n	let mut data: String;\n	data =\n"#jEdit Editor Scheme\n#:mode=properties:lineSeparator=\\n:\n\n".to_string();\n\n	println!("{:#?}", data);\n	write_file(&"converted.jedit-scheme".to_string(), &data) //TODO: as_str is unstable\n}
+use ir::{read_file, write_file, tokenize, IntermediateRepr};
+
+pub fn read_scheme(infile: &String) -> IntermediateRepr {
+	println!("Reading jedit scheme..");
+	IntermediateRepr{
+		name : "temp".to_string(),
+		view_fgcolor : "temp".to_string(),
+	}
+}
+
+pub fn write_scheme(scheme: &IntermediateRepr) {
+	//TODO: use templating
+	//TODO: handle edge cases
+	//TODO: Rust rawstrings?
+
+	let mut data: String;
+	data = "#jEdit Editor Scheme\n#:mode=properties:lineSeparator=\\".to_string();
+	data.push_str("n");
+	//data = format!("{}", "");
+
+	println!("{}", data);
+	write_file(&"converted.jedit-scheme".to_string(), &data) //TODO: as_str is unstable
+}
