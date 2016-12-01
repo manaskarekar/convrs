@@ -14,24 +14,25 @@ pub struct IRAttribute {
 
 #[derive(RustcDecodable, RustcEncodable, Debug, Default)]
 pub struct IntermediateRepr {
-	pub text_keyword1 : String, //TODO: Keeping it simple for now, change these to IRAttribute.
-	pub text_keyword2 : String,
-	pub text_keyword3 : String,
-	pub text_keyword4 : String,
     
-	pub currentLineColor : String,
-    
-	//foldLine0 : String,
-	//foldLine1 : String,
-	//foldLine2 : String,
-	//foldLine3 : String,
-
 	pub name : String,
-	pub view_fgcolor : String,
-	pub view_bgcolor : String,
-
-	//view_linehighlightcolor : String,
-	//view_caretcolor : String,
+	pub fgcolor : String,
+	pub bgcolor : String,
+	pub keyword1 : String,
+	pub keyword2 : String,
+	pub keyword3 : String,
+	pub keyword4 : String,
+	pub comment1 : String,
+	pub digit : String,
+	pub operator : String,
+	pub function : String,
+	pub literal1 : String,
+	pub literal2 : String,
+	pub literal3 : String,	
+	pub caretColor : String,
+	pub selectionColor : String,
+	pub eolMarkerColor : String,
+	pub lineHighlightColor : String,
 
 }
 
