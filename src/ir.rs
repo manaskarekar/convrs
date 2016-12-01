@@ -56,7 +56,7 @@ pub fn write_json(ir_file: String) {
 
 pub fn tokenize(infile: &String) {
 	let raw_data = read_file(infile);
-	println!("Raw_data:{:#?}", &raw_data);
+	println!("raw_data:{:#?}", &raw_data);
 }
 
 pub fn read_file(filename: &String) -> String {
