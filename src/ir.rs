@@ -14,7 +14,7 @@ pub struct IRAttribute {
 
 #[derive(RustcDecodable, RustcEncodable, Debug, Default)]
 pub struct IntermediateRepr {
-    
+
 	pub name : String,
 	pub fgcolor : String,
 	pub bgcolor : String,
@@ -28,7 +28,7 @@ pub struct IntermediateRepr {
 	pub function : String,
 	pub literal1 : String,
 	pub literal2 : String,
-	pub literal3 : String,	
+	pub literal3 : String,
 	pub caretColor : String,
 	pub selectionColor : String,
 	pub eolMarkerColor : String,
@@ -56,11 +56,11 @@ pub fn write_json(ir_file: String) {
 
 pub fn tokenize(infile: &String) {
 	let raw_data = read_file(infile);
-	println!("raw_data:{:#?}", &raw_data);
+	println!("Raw_data:{:#?}", &raw_data);
 }
 
 pub fn read_file(filename: &String) -> String {
-	println!("reading file: {}", &filename);
+	println!("Reading file: {}", &filename);
 
 	let mut f = File::open(&filename).expect("Failed to read file.");
 	let mut data = String::new();
@@ -72,7 +72,7 @@ pub fn read_file(filename: &String) -> String {
 }
 
 pub fn write_file(filename: &String, data: &String) {
-	println!("writing file: {}", &filename);
+	println!("Writing file: {}", &filename);
 
 	let mut f = File::create(filename).expect("Failed to create output file.");
 	//let mut f = try!(File::create("foo.txt"));
