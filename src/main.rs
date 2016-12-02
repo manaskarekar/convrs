@@ -1,6 +1,6 @@
 //Convrs: A tool to convert color schemes between editors.
 
-extern crate rustc_serialize;
+//extern crate rustc_serialize;
 
 mod profiles;
 mod ir;

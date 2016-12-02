@@ -1,18 +1,20 @@
-use rustc_serialize::{json};
+//use rustc_serialize::{json};
 use std::fs::File;
 use std::io::{Read, Write};
 use std::path::Path;
 use std::error::Error;
 
+/*
 #[derive(RustcDecodable, RustcEncodable, Debug)]
 pub struct IRAttribute {
 	color: String,
 	bgcolor: String,
 	style: String, //example: "biu" -> bold and italic and underscored if supported.
 }
+*/
 
-
-#[derive(RustcDecodable, RustcEncodable, Debug, Default)]
+//#[derive(RustcDecodable, RustcEncodable, Debug, Default)]
+#[derive(Debug, Default)]
 pub struct IntermediateRepr {
 
 	pub name : String,
@@ -36,6 +38,7 @@ pub struct IntermediateRepr {
 
 }
 
+/*
 pub fn ir_to_json(ir: &IntermediateRepr) -> String {
 	let encoded = json::encode(&ir).unwrap();
 	println!("\nEncoded: {:#?}", &encoded);
@@ -52,7 +55,7 @@ pub fn json_to_ir(json_data: &String) -> IntermediateRepr {
 
 pub fn write_json(ir_file: String) {
 	//json file
-}
+}*/
 
 pub fn tokenize(infile: &String) {
 	let raw_data = read_file(infile);
