@@ -20,8 +20,8 @@ pub fn write_scheme(scheme: &IntermediateRepr) {
 	data.push_str("n:\n");
 
 	data.push_str(format!("scheme.name={}\n", &scheme.name).as_str());
-	data.push_str(format!("view.fgcolor=\\{}\n", &scheme.fgcolor).as_str());
-	data.push_str(format!("view.bgColor=\\{}\n", &scheme.bgcolor).as_str());
+	data.push_str(format!("view.fgColor=\\#{}\n", &scheme.fgcolor).as_str());
+	data.push_str(format!("view.bgColor=\\#{}\n", &scheme.bgcolor).as_str());
 	data.push_str(format!("view.style.keyword1=color\\:\\{}\n", &scheme.keyword1).as_str());
 	data.push_str(format!("view.style.keyword2=color\\:\\{}\n", &scheme.keyword2).as_str());
 	data.push_str(format!("view.style.keyword3=color\\:\\{}\n", &scheme.keyword3).as_str());

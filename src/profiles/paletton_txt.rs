@@ -19,16 +19,16 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 		name : scheme_name.to_string(),
 
 		//fgcolor : lines[12].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		//bgcolor : lines[9].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		fgcolor : "0F0F0F".to_string(),
+		//bgcolor : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		fgcolor : "000000".to_string(),
 		bgcolor : "FFFFFF".to_string(),
 
-		keyword1 : lines[16].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		keyword2 : lines[16].split(' ').collect::<Vec<&str>>()[6].to_string(), //TODO: Temporarily using keyword1 val
-		keyword3 : lines[16].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		keyword4 : lines[16].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		comment1 : lines[15].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		digit 	 : lines[16].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		keyword1 : lines[8].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		keyword2 : lines[8].split(' ').collect::<Vec<&str>>()[6].to_string(), //TODO: Temporarily using keyword1 val
+		keyword3 : lines[8].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		keyword4 : lines[8].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		comment1 : lines[16].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		digit 	 : lines[15].split(' ').collect::<Vec<&str>>()[6].to_string(),
 		operator : lines[17].split(' ').collect::<Vec<&str>>()[6].to_string(),
 		function : lines[18].split(' ').collect::<Vec<&str>>()[6].to_string(),
 		literal1 : lines[19].split(' ').collect::<Vec<&str>>()[6].to_string(),
