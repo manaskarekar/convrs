@@ -13,13 +13,11 @@
 - Location of jedit schemes directory: /home/epic/.jedit/schemes
 - Location of sublimetext schemes directory: ?
 
-
 ### Structure
 
 - Vim scheme > Read > Use vim->IR profile > Convert to IR > Use IR->jedit profile > Write to file
 - Structure of X -> Y profile and Y -> X profiles. Can you use a single file? One end will always be IR.
 - Choosing an IR : JSON, yaml, toml, custom?
-- Parse format1 into an IntermediateRepr object -> write to json ir file -> then read the file and spit it out as
 
 ### Thoughts:
 
@@ -29,23 +27,14 @@
 
 ### TODO:
 
-- Plugging in a simple json structure for now, hope to change it to a simple non json file.
-- For v 0.0.1, pick out the stuff from a vim scheme that you need for jedit scheme.
-
-
-- json_to_ir
-- ir_to_json
-- profiles
-	- vim_reader and writer
-	- jedit_reader and writer
-- class IR
-- class IRAttribute
-
 - Strings and company are handled atrociously right now. Please fix.
 
 ### Wishlist:
 
+- Handle paletton schemes that are not tetrads.
+- JSON for serialized IR, should also enable tweaking mapping between source and destination.
 - Add inspection of file name extension to figure out source format type. For now ask explicitly.
-- Add a list of formats that can be passed to the commandline as parameters.
+- Print a list of formats that can be passed to the commandline as parameters.
 - Add reading schemes from urls, github, paletton and others.
-- Handle scheme names properlu.
+- Handle scheme names properly.
+- Examples, tests and samples.

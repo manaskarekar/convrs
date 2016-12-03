@@ -15,6 +15,8 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	//	assert_eq!(&lines.next(), &Some("*** Primary color:"));
 	//	assert line !empty and index <= len
 
+	println!("{:#?}", &lines);
+
 	let mut scheme = IntermediateRepr { //create new from scheme_data
 		name : scheme_name.to_string(),
 
@@ -23,22 +25,23 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 		fgcolor : "000000".to_string(),
 		bgcolor : "FFFFFF".to_string(),
 
-		keyword1 : lines[8].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		keyword2 : lines[8].split(' ').collect::<Vec<&str>>()[6].to_string(), //TODO: Temporarily using keyword1 val
-		keyword3 : lines[8].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		keyword4 : lines[8].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		comment1 : lines[16].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		digit 	 : lines[15].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		operator : lines[17].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		function : lines[18].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		literal1 : lines[19].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		literal2 : lines[23].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		literal3 : lines[24].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		caretColor : lines[25].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		selectionColor : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(), 
-		eolMarkerColor : lines[32].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		//lineHighlightColor : "BB1A75".to_string(),
-		lineHighlightColor : lines[35].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		keyword1 : lines[7].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		keyword2 : lines[7].split(' ').collect::<Vec<&str>>()[6].to_string(), //TODO: Temporarily using keyword1 val
+		keyword3 : lines[7].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		keyword4 : lines[7].split(' ').collect::<Vec<&str>>()[6].to_string(),
+
+		comment1 : lines[18].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		digit 	 : lines[25].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		operator : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		function : lines[34].split(' ').collect::<Vec<&str>>()[6].to_string(),
+
+		literal1 : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		literal2 : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		literal3 : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		caretColor : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		selectionColor : lines[23].split(' ').collect::<Vec<&str>>()[6].to_string(), 
+		eolMarkerColor : lines[23].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		lineHighlightColor : lines[26].split(' ').collect::<Vec<&str>>()[6].to_string(),
 
 	/*
 	let primary_shade0 = &lines[8].split(' ').collect::<Vec<&str>>()[6];

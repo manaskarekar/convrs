@@ -33,10 +33,10 @@ pub fn write_scheme(scheme: &IntermediateRepr) {
 	data.push_str(format!("view.style.literal1=color\\:\\{}\n", &scheme.literal1).as_str());
 	data.push_str(format!("view.style.literal2=color\\:\\{}\n", &scheme.literal2).as_str());
 	data.push_str(format!("view.style.literal3=color\\:\\{}\n", &scheme.literal3).as_str());
-	data.push_str(format!("view.style.caretColor=color\\:\\{}\n", &scheme.caretColor).as_str());
-	data.push_str(format!("view.style.selectionColor=color\\:\\{}\n", &scheme.selectionColor).as_str());
-	data.push_str(format!("view.style.eolMarkerColor=color\\:\\{}\n", &scheme.eolMarkerColor).as_str());
-	data.push_str(format!("view.style.lineHighlightColor=color\\:\\{}\n", &scheme.lineHighlightColor).as_str());
+	data.push_str(format!("view.style.caretColor=\\{}\n", &scheme.caretColor).as_str());
+	data.push_str(format!("view.style.selectionColor=\\{}\n", &scheme.selectionColor).as_str());
+	data.push_str(format!("view.style.eolMarkerColor=\\{}\n", &scheme.eolMarkerColor).as_str());
+	data.push_str(format!("view.style.lineHighlightColor=\\{}\n", &scheme.lineHighlightColor).as_str());
 
 	println!("{}", data);
 	write_file(&format!("{}.jedit-scheme", &scheme.name).to_string(), &data)
