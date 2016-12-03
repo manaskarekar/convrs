@@ -1,4 +1,4 @@
-### Convrs 
+# Convrs 
 
 *A tool to convert color schemes between editors.*
 
@@ -7,21 +7,21 @@
 This is a hara-kiri toy project to get my hands dirty with Rust, far from idiomatic rust, but fun. 
 
 
-# Features
+### Features
 
 - Hopes to enable converting color schemes between different editors and palettes.
 - Right now, support for text files spit out by http://paletton.com/ to be spit out as jEdit scheme files. The colors used by the scheme need to be configured properly. Right now, just assigning random colors to various components.
 - 
 
-# General use
+### General use
 
 - ./convrs <source_file> source_format destination_format
 
-# Example
+### Example
 
 - ./convrs paletton_example1.txt paletton_txt jedit
 
-# Notes
+### Notes
 
 - Right now all the code is very fragile, I need to go back and do it right once I've grokked rust.
 

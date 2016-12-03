@@ -22,8 +22,8 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 
 		//fgcolor : lines[12].split(' ').collect::<Vec<&str>>()[6].to_string(),
 		//bgcolor : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		fgcolor : "000000".to_string(),
-		bgcolor : "FFFFFF".to_string(),
+		fgcolor : "#000000".to_string(),
+		bgcolor : "#FFFFFF".to_string(),
 
 		keyword1 : lines[7].split(' ').collect::<Vec<&str>>()[6].to_string(),
 		keyword2 : lines[7].split(' ').collect::<Vec<&str>>()[6].to_string(), //TODO: Temporarily using keyword1 val
@@ -41,7 +41,7 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 		caretColor : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
 		selectionColor : lines[23].split(' ').collect::<Vec<&str>>()[6].to_string(), 
 		eolMarkerColor : lines[23].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		lineHighlightColor : lines[26].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		lineHighlightColor : lines[24].split(' ').collect::<Vec<&str>>()[6].to_string(),
 
 	/*
 	let primary_shade0 = &lines[8].split(' ').collect::<Vec<&str>>()[6];

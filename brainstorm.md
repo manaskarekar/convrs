@@ -31,8 +31,9 @@
 
 ### Wishlist:
 
-- Handle paletton schemes that are not tetrads.
+- Handle paletton schemes that are not tetrads, gracefully.
 - JSON for serialized IR, should also enable tweaking mapping between source and destination.
+- Perhaps add an option to randomize the mappings.
 - Add inspection of file name extension to figure out source format type. For now ask explicitly.
 - Print a list of formats that can be passed to the commandline as parameters.
 - Add reading schemes from urls, github, paletton and others.
