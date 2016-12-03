@@ -25,7 +25,7 @@ pub fn write_scheme(scheme: &IntermediateRepr) {
 	data.push_str(format!("view.gutter.fgColor=\\{}\n", &scheme.fgcolor).as_str());
 	data.push_str(format!("view.gutter.bgColor=\\{}\n", &scheme.bgcolor).as_str());	
 	data.push_str(format!("view.gutter.highlightColor=\\{}\n", &scheme.keyword1).as_str());
-	//data.push_str(format!("view.gutter.currentLineColor=\\{}\n", &scheme.lineHighlightColor).as_str());	
+	data.push_str(format!("view.gutter.currentLineColor=\\{}\n", &scheme.lineHighlightColor).as_str());	
 	data.push_str(format!("view.gutter.markerColor=\\{}\n", &scheme.keyword3).as_str());
 	data.push_str(format!("view.gutter.noFocusBorderColor=\\{}\n", &scheme.bgcolor).as_str());
 	data.push_str(format!("view.gutter.focusBorderColor=\\{}\n", &scheme.fgcolor).as_str());	
