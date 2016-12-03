@@ -12,6 +12,7 @@ This is a hara-kiri toy project to get my hands dirty with Rust, far from idioma
 - Hopes to enable converting color schemes between different editors and palettes.
 - Right now, support for text files spit out by http://paletton.com/ to be spit out as jEdit scheme files. The colors used by the scheme need to be configured properly. Right now, just assigning random colors to various components.
 
+
 ### General use
 
 - ./convrs <source_file> source_format destination_format
