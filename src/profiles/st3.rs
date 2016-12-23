@@ -1,5 +1,5 @@
 use ir::{read_file, tokenize, IntermediateRepr};
-
+use regex::Regex;
 
 /* Todo for the reader
 	parse the {} as objects
@@ -11,6 +11,7 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	
 	let ir:  IntermediateRepr = Default::default();
 
+	let re = Regex::new(r"\{(?s).*\}").unwrap();
 
 
 
