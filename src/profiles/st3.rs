@@ -9,10 +9,12 @@ use regex::Regex;
 pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	println!("Reading Sublime Text 3 color scheme..");
 	
+	let scheme_data = read_file(&infile);
 	let ir:  IntermediateRepr = Default::default();
 
 	let re = Regex::new(r"\{(?s).*\}").unwrap();
-
+	let cap = re.captures(scheme_data.as_str()).unwrap();
+	println!("{:#?}", cap);
 
 
 	/*IntermediateRepr{
@@ -45,3 +47,5 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	 
 	 ir
 }
+
+pub fn write_scheme() {}
