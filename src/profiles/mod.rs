@@ -5,3 +5,4 @@ pub mod vim;
 pub mod jedit;
 pub mod paletton_txt;
 pub mod st3;
+pub mod tm;

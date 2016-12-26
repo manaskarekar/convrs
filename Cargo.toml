@@ -4,6 +4,8 @@ version = "0.1.0"
 authors = ["Manas Karekar <powerslave12r@gmail.com>"]
 
 [dependencies]
-regex = "0.1.80"
+plist = "0.0.15"
+
+#regex = "0.1.80"
 #rustc-serialize = "0.3.19"
 #xml-rs = "0.3.4"

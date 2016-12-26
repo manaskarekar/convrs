@@ -12,7 +12,8 @@ pub fn convert(source_file: &String, source_format: &String, dest_format: &Strin
 		".vim" | "vim" | "vi" | "gvim" | ".gvim" => source_data = vim::read_scheme(source_file),
 		".jedit" | "jedit" | "jEdit" => source_data = jedit::read_scheme(source_file),
 		"paletton_txt" => source_data = paletton_txt::read_scheme(source_file),
-		"tmTheme" | "sublime-theme" | "subl" | "sublimetext" => source_data = st3::read_scheme(source_file),
+		"sublime-theme" | "subl" | "sublimetext" => source_data = st3::read_scheme(source_file),
+		"tmTheme" | "tm" => source_data = tm::read_scheme(source_file),
 		&_ => println!("Error: Unknown source filetype. Choose one from: {:?}", &formats_available),		//TODO: How to handle this "None"?
 	};
 
@@ -20,7 +21,8 @@ pub fn convert(source_file: &String, source_format: &String, dest_format: &Strin
 		".vim" | "vim" | "vi" | "gvim" | ".gvim" => vim::write_scheme(),
 		".jedit" | "jedit" | "jEdit" => jedit::write_scheme(&source_data),
 		"paletton_txt" => paletton_txt::write_scheme(),
-		"tmTheme" | "sublime-theme" | "subl" | "sublimetext" => st3::write_scheme(),
+		"sublime-theme" | "subl" | "sublimetext" => st3::write_scheme(),
+		"tmTheme" | "tm" => tm::write_scheme(),
 		&_ => println!("Error: Unknown dest filetype. Choose one from: {:?}", &formats_available),
 	}
 }
