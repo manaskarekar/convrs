@@ -21,7 +21,9 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	//println!("{:#?}", cap);
 
 	let pl = Plist::read(f);
-	println!("{:#?}", pl);
+	println!("{:#?}", pl.unwrap());
+
+
 
 	/*IntermediateRepr{
 		name : "#000000".to_string(),

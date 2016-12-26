@@ -10,11 +10,11 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	//let ir:  IntermediateRepr = Default::default();
 
 
-	let mut f = File::open(&infile).expect("Failed to read file.");
+	let f = File::open(&infile).expect("Failed to read file.");
 	let pl = Plist::read(f);
 	println!("{:#?}", pl.unwrap());
 
-	let ir = IntermediateRepr { name: pl.to_string(), ..Default::default() };
+	let ir = IntermediateRepr { name: "default".to_string(), ..Default::default() };
 	//IntermediateRepr{
 	//	name : "#000000".to_string(),
     //
