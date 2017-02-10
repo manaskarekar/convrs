@@ -1,4 +1,3 @@
-//use rustc_serialize::{json};
 use std::fs::File;
 use std::io::{Read, Write};
 use std::path::Path;
@@ -37,25 +36,6 @@ pub struct IntermediateRepr {
 	pub lineHighlightColor : String,
 
 }
-
-/*
-pub fn ir_to_json(ir: &IntermediateRepr) -> String {
-	let encoded = json::encode(&ir).unwrap();
-	println!("\nEncoded: {:#?}", &encoded);
-
-	encoded
-}
-
-pub fn json_to_ir(json_data: &String) -> IntermediateRepr {
-	let decoded: IntermediateRepr = json::decode(json_data).unwrap();
-	println!("\njson_data: {:#?}", &json_data);
-
-	decoded
-}
-
-pub fn write_json(ir_file: String) {
-	//json file
-}*/
 
 pub fn tokenize(infile: &String) {
 	let raw_data = read_file(infile);

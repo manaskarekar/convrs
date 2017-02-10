@@ -2,7 +2,6 @@
 
 extern crate plist;
 //extern crate regex;
-//extern crate rustc_serialize;
 
 mod profiles;
 mod ir;
@@ -17,21 +16,4 @@ fn main() {
 	} else {
 		convert::convert(&args[1], &args[2], &args[3]);
 	}
-	//profiles::vim::tokenize("src/test.json".to_string());
 }
-
-/*
-use ir::*;
-
-{
-	// Misc code snippets until I grok Rust syntax
-	for x in env::args(){
-		println!("{}", x);
-	}
-
-	let data = ir::read_file("src/test.json".to_string());
-	//println!("{:#?}", &data);
-	let ir_obj = ir::json_to_ir(&data);
-	let json_string = ir_to_json(&ir_obj);
-}
-*/
