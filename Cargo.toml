@@ -5,6 +5,7 @@ authors = ["Manas Karekar <powerslave12r@gmail.com>"]
 
 [dependencies]
 plist = "0.0.15"
+handlebars = "0.28.1"
 
 #regex = "0.1.80"
 #rustc-serialize = "0.3.19"
