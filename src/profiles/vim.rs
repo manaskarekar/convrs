@@ -1,7 +1,7 @@
-use ir::{read_file, tokenize, IntermediateRepr};
+use ir::{IntermediateRepr};
 
 pub fn read_scheme(infile: &String) -> IntermediateRepr {
-	println!("Reading vim scheme..");
+	println!("Reading vim scheme..{}", infile);
 	let ir: IntermediateRepr = Default::default();
 	ir
 	//IntermediateRepr{

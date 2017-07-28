@@ -1,4 +1,4 @@
-use ir::{read_file, tokenize, IntermediateRepr};
+use ir::{IntermediateRepr};
 
 use std::fs::File;
 use plist::Plist;

@@ -1,11 +1,11 @@
-use ir::{read_file, tokenize, IntermediateRepr};
+use ir::{read_file, IntermediateRepr};
 
 pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	println!("Reading paletton_txt color palette..");
 
 	let scheme_data = read_file(&infile);
 	let scheme_name = infile.split('.').collect::<Vec<&str>>()[0]; //split on the first '.' and use the first value for name
-	let mut lines = scheme_data.lines().collect::<Vec<&str>>();
+	let lines = scheme_data.lines().collect::<Vec<&str>>();
 
 
 	//TODO: Strip all newlines, right now, when copy pasting from text output, include the first newline.
@@ -17,7 +17,7 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 
 	println!("{:#?}", &lines);
 
-	let mut scheme = IntermediateRepr { //create new from scheme_data
+	let scheme = IntermediateRepr { //create new from scheme_data
 		name : scheme_name.to_string(),
 
 		//fgcolor : lines[12].split(' ').collect::<Vec<&str>>()[6].to_string(),

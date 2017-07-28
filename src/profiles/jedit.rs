@@ -1,7 +1,7 @@
-use ir::{read_file, write_file, tokenize, IntermediateRepr};
+use ir::{write_file, IntermediateRepr};
 
 pub fn read_scheme(infile: &String) -> IntermediateRepr {
-	println!("Reading jedit scheme..");
+	println!("Reading jedit scheme..{}", infile);
 	let ir: IntermediateRepr = Default::default();
 	ir
 	//IntermediateRepr{

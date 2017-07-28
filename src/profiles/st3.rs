@@ -1,4 +1,4 @@
-use ir::{read_file, tokenize, IntermediateRepr};
+use ir::{IntermediateRepr};
 //use regex::Regex;
 use std::fs::File;
 use plist::Plist;
@@ -14,7 +14,7 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	//let scheme_data = read_file(&infile);
 	//let ir:  IntermediateRepr = Default::default();
 	let ir = IntermediateRepr { name: "default".to_string(), ..Default::default() };
-	let mut f = File::open(&infile).expect("Failed to read file.");
+	let f = File::open(&infile).expect("Failed to read file.");
 
 	//let re = Regex::new(r"\{(?s).*\}").unwrap();
 	//let cap = re.captures(scheme_data.as_str()).unwrap();

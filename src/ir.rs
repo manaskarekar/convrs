@@ -1,7 +1,9 @@
+#![allow(non_snake_case)]
+
 use std::fs::File;
 use std::io::{Read, Write};
-use std::path::Path;
-use std::error::Error;
+//use std::path::Path;
+//use std::error::Error;
 
 /*
 #[derive(RustcDecodable, RustcEncodable, Debug)]
@@ -37,10 +39,12 @@ pub struct IntermediateRepr {
 
 }
 
+/*
 pub fn tokenize(infile: &String) {
 	let raw_data = read_file(infile);
 	println!("raw_data:{:#?}", &raw_data);
 }
+*/
 
 pub fn read_file(filename: &String) -> String {
 	println!("Reading file: {}", &filename);
