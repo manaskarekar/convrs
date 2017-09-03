@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Manas Karekar <powerslave12r@gmail.com>"]
 
 [dependencies]
-plist = "0.0.15"
+plist = "*"
 handlebars = "0.28.1"
 
 #regex = "0.1.80"
