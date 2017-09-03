@@ -2,20 +2,15 @@
 
 *A tool to convert color schemes between editors.*
 
-...
-
-This is a 'get my hands dirty with Rust' toy project, far from idiomatic, or efficient Rust, but fun. In places, I know how I would do it differently in other languages, but haven't gone deep down that rabbit hole in Rust. Please feel free to point out what I'm doing inefficiently/incorrectly, it'll help me learn quicker!
-
-
 ### Features
 
-- Hopes to enable converting color schemes between different editors and palettes.
+- Convert color schemes between different formats.
 - In the future, hope to allow better mapping from source colors to destination colors.
 - Right now, support for text files spit out by http://paletton.com/ to be spit out as jEdit scheme files.
 
 ### General use
 
-- ./convrs < source_file > < source_format > < destination_format >
+- ./convrs < source_file or source_folder > < source_format > < destination_format >
 
 ### Example
 

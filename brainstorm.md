@@ -28,6 +28,14 @@
 ### TODO:
 
 - Strings and company are handled atrociously right now. Please fix.
+- Use write! macro for string building.
+- Use ? wherever you can.
+- Consequently, return Result<String, Error> and handle accordingly.
+- Perhaps, use the reader.lines() method to read the file.
+- Use traits.
+- Think about how to restructure the code for using with traits.
+- Rethink the need for the IR struct.
+
 
 ### Wishlist:
 
