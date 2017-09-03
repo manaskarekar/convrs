@@ -1,5 +1,7 @@
 # Convrs
 
+[![Build Status](https://travis-ci.org/manaskarekar/convrs.svg?branch=master)](https://travis-ci.org/manaskarekar/convrs)
+
 *A tool to convert color schemes between editors.*
 
 ### Features
