@@ -3,6 +3,8 @@ use ir::{IntermediateRepr};
 use std::fs::File;
 use plist::Plist;
 
+//use std::io::BufReader;
+
 pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	println!("Reading Textmate color scheme (plist)..");
 
@@ -12,7 +14,12 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 
 	let f = File::open(&infile).expect("Failed to read file.");
 	let pl = Plist::read(f);
-	println!("{:#?}", pl.unwrap());
+	//println!("{:#?}", pl.unwrap().as_dictionary().unwrap().get("uuid"));
+	println!("{:#?}", pl.unwrap().as_dictionary().unwrap().get("Lines").unwrap().as_array().unwrap().get(0).unwrap());
+
+	//let mut reader = BufReader::new(f);
+	//let pl = Plist::from_reader(&mut reader).unwrap();
+	//println!("{:#?}", pl);
 
 	let ir = IntermediateRepr { name: "default".to_string(), ..Default::default() };
 	//IntermediateRepr{

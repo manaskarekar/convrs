@@ -27,15 +27,17 @@
 
 ### TODO:
 
+- Make the source file type requirement optional. Just infer from file extension. If file doesn't have it, then require it.
+- Handle file IO/paths etc more idiomatically.
 - Strings and company are handled atrociously right now. Please fix.
 - Use write! macro for string building.
 - Use ? wherever you can.
 - Consequently, return Result<String, Error> and handle accordingly.
 - Perhaps, use the reader.lines() method to read the file.
-- Use traits.
-- Think about how to restructure the code for using with traits.
+- Use traits: think about how to restructure the code for using with traits.
+	- Instead of match, just pass in the object of whatever type and implement a convert trait for all objects.
 - Rethink the need for the IR struct.
-
+- Use Cow
 
 ### Wishlist:
 
@@ -47,3 +49,4 @@
 - Add reading schemes from urls, github, paletton and others.
 - Handle scheme names properly.
 - Examples, tests and samples.
+- Another tool that gives you back schemes based on colors or moods that you can specify. Opportunity to put nltk to good use?
