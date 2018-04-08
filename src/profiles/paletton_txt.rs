@@ -1,5 +1,17 @@
 use ir::{read_file, IntermediateRepr};
 
+macro_rules! paletton {
+
+	($lines:expr, $line_number:expr, $col_number:expr) => ({
+		$lines[$line_number].split(' ').collect::<Vec<&str>>()[$col_number].to_string()
+	});
+
+	($lines:expr, $line_number:expr) => ({
+		paletton!($lines, $line_number, 6) // Hardcoded to read the 7th element, can genericize if needed
+	});
+}
+
+
 pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	println!("Reading paletton_txt color palette..");
 
@@ -22,33 +34,33 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 
 		//fgcolor : lines[12].split(' ').collect::<Vec<&str>>()[6].to_string(),
 		//bgcolor : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		fgcolor : "#000000".to_string(),
-		bgcolor : "#FFFFFF".to_string(),
+		fgcolor :				"#000000".to_string(),
+		bgcolor :				"#FFFFFF".to_string(),
 
-		keyword1 : lines[7].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		keyword2 : lines[7].split(' ').collect::<Vec<&str>>()[6].to_string(), //TODO: Temporarily using keyword1 val
-		keyword3 : lines[7].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		keyword4 : lines[7].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		keyword1 :				paletton!(lines,7),
+		keyword2 :				paletton!(lines,7), //TODO: Temporarily using keyword1 val
+		keyword3 :				paletton!(lines,7),
+		keyword4 :				paletton!(lines,7),
 
-		comment1 : lines[18].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		digit 	 : lines[25].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		operator : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		function : lines[34].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		comment1 :				paletton!(lines,18),
+		digit	 :				paletton!(lines,25),
+		operator :				paletton!(lines,31),
+		function :				paletton!(lines,34),
 
-		literal1 : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		literal2 : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		literal3 : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		caretColor : lines[31].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		selectionColor : lines[23].split(' ').collect::<Vec<&str>>()[6].to_string(), 
-		eolMarkerColor : lines[23].split(' ').collect::<Vec<&str>>()[6].to_string(),
-		lineHighlightColor : lines[24].split(' ').collect::<Vec<&str>>()[6].to_string(),
+		literal1 :				paletton!(lines,31),
+		literal2 :				paletton!(lines,31),
+		literal3 :				paletton!(lines,31),
+		caretColor :			paletton!(lines,31),
+		selectionColor :		paletton!(lines,23),
+		eolMarkerColor :		paletton!(lines,23),
+		lineHighlightColor :	paletton!(lines,24),
 
 	/*
 	let primary_shade0 = &lines[8].split(' ').collect::<Vec<&str>>()[6];
 	let primary_shade1 = &lines[9].split(' ').collect::<Vec<&str>>()[6];
 	let primary_shade2 = &lines[10].split(' ').collect::<Vec<&str>>()[6];
 	let primary_shade3 = &lines[11].split(' ').collect::<Vec<&str>>()[6];
-	let primary_shade4 = &lines[12].split(' ').collect::<Vec<&str>>()[6];	
+	let primary_shade4 = &lines[12].split(' ').collect::<Vec<&str>>()[6];
 
 	let secondary1_shade0 = &lines[15].split(' ').collect::<Vec<&str>>()[6];
 	let secondary1_shade1 = &lines[16].split(' ').collect::<Vec<&str>>()[6];

@@ -11,7 +11,7 @@ pub fn convert(source_file: &String, source_format: &String, dest_format: &Strin
 	match source_format.to_lowercase().as_str() {
 		".vim" | "vim" | "vi" | "gvim" | ".gvim" => source_data = vim::read_scheme(source_file),
 		".jedit" | "jedit" => source_data = jedit::read_scheme(source_file),
-		"pt" | "paletton_txt" => source_data = paletton_txt::read_scheme(source_file),
+		"pt" | "paletton" | "paletton_txt" => source_data = paletton_txt::read_scheme(source_file),
 		"sublime-theme" | "subl" | "sublimetext" => source_data = st3::read_scheme(source_file),
 		"tmtheme" | "tm" => source_data = tm::read_scheme(source_file),
 		&_ => println!("Error: Unknown source filetype. Choose one from: {:?}", &formats_available),		//TODO: How to handle this "None"?
@@ -20,7 +20,7 @@ pub fn convert(source_file: &String, source_format: &String, dest_format: &Strin
 	match dest_format.to_lowercase().as_str() {
 		".vim" | "vim" | "vi" | "gvim" | ".gvim" => vim::write_scheme(),
 		".jedit" | "jedit" => jedit::write_scheme(&source_data),
-		"pt" | "paletton_txt" => paletton_txt::write_scheme(),
+		"pt" | "paletton" | "paletton_txt" => paletton_txt::write_scheme(),
 		"sublime-theme" | "subl" | "sublimetext" => st3::write_scheme(),
 		"tmtheme" | "tm" => tm::write_scheme(),
 		&_ => println!("Error: Unknown dest filetype. Choose one from: {:?}", &formats_available),
