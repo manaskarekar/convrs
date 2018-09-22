@@ -8,7 +8,7 @@ use plist::Plist;
 	map them to objects/dicts
 
 */
-pub fn read_scheme(infile: &String) -> IntermediateRepr {
+pub fn read_scheme(infile: &str) -> IntermediateRepr {
 	println!("Reading Sublime Text 3 color scheme..");
 
 	//let scheme_data = read_file(&infile);

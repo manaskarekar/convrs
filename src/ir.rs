@@ -46,7 +46,7 @@ pub fn tokenize(infile: &String) {
 }
 */
 
-pub fn read_file(filename: &String) -> String {
+pub fn read_file(filename: &str) -> String {
 	println!("Reading file: {}", &filename);
 
 	let mut f = File::open(&filename).expect("Failed to read file.");
@@ -58,7 +58,7 @@ pub fn read_file(filename: &String) -> String {
 	data
 }
 
-pub fn write_file(filename: &String, data: &String) {
+pub fn write_file(filename: &str, data: &str) {
 	println!("Writing file: {}", &filename);
 
 	let mut f = File::create(filename).expect("Failed to create output file.");

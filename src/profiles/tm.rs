@@ -5,7 +5,7 @@ use plist::Plist;
 
 //use std::io::BufReader;
 
-pub fn read_scheme(infile: &String) -> IntermediateRepr {
+pub fn read_scheme(infile: &str) -> IntermediateRepr {
 	println!("Reading Textmate color scheme (plist)..");
 
 	//let scheme_data = read_file(&infile);
@@ -21,7 +21,7 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	//let pl = Plist::from_reader(&mut reader).unwrap();
 	//println!("{:#?}", pl);
 
-	let ir = IntermediateRepr { name: "default".to_string(), ..Default::default() };
+	IntermediateRepr { name: "default".to_string(), ..Default::default() }
 	//IntermediateRepr{
 	//	name : "#000000".to_string(),
     //
@@ -49,8 +49,6 @@ pub fn read_scheme(infile: &String) -> IntermediateRepr {
 	//	lineHighlightColor : "#000000".to_string(),
     //
 	//}
-
-	ir
 }
 
 pub fn write_scheme() {}

@@ -12,7 +12,7 @@ macro_rules! paletton {
 }
 
 
-pub fn read_scheme(infile: &String) -> IntermediateRepr {
+pub fn read_scheme(infile: &str) -> IntermediateRepr {
 	println!("Reading paletton_txt color palette..");
 
 	let scheme_data = read_file(&infile);

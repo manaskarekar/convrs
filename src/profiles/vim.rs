@@ -1,6 +1,6 @@
 use ir::{IntermediateRepr};
 
-pub fn read_scheme(infile: &String) -> IntermediateRepr {
+pub fn read_scheme(infile: &str) -> IntermediateRepr {
 	println!("Reading vim scheme..{}", infile);
 	let ir: IntermediateRepr = Default::default();
 	ir

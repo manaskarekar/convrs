@@ -1,7 +1,7 @@
 use profiles::*;
 use ir::*;
 
-pub fn convert(source_file: &String, source_format: &String, dest_format: &String) {
+pub fn convert(source_file: &str, source_format: &str, dest_format: &str) {
 	println!("Converting file {:#?}: {} -> {}", source_file, source_format, dest_format);
 
 	let mut source_data: IntermediateRepr = Default::default();
