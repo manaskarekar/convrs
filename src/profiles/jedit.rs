@@ -51,5 +51,5 @@ pub fn write_scheme(scheme: &IntermediateRepr) {
 	data.push_str(format!("view.style.lineHighlightColor=\\{}\n", &scheme.lineHighlightColor).as_str());
 
 	println!("{}", data);
-	write_file(&format!("{}.jedit-scheme", &scheme.name).to_string(), &data)
+	write_file(&format!("{}.jedit-scheme", &scheme.name), &data)
 }
